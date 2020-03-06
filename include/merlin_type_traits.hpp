@@ -12,10 +12,10 @@ namespace merl
     };
 
     template <typename T>
-    struct is_strict_integral : public type_disjunction<T, short    , unsigned short,
-                                                           int      , unsigned int,
-                                                           long     , unsigned long,
-                                                           long long, unsigned long long>
+    struct is_strict_integral : public type_disjunction<typename std::remove_cv<T>::type, short    , unsigned short,
+                                                                                          int      , unsigned int,
+                                                                                          long     , unsigned long,
+                                                                                          long long, unsigned long long>
     {};
 }
 
