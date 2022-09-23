@@ -1,0 +1,7 @@
+#ifndef MERLIN_TYPE_TRAITS
+#define MERLIN_TYPE_TRAITS
+
+#include <merlin_type_traits.hpp>
+
+#endif
+

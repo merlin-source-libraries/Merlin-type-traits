@@ -9,8 +9,9 @@ if [ $# == 1 ]; then
 	if [ ! -d ./include ]; then
 		mkdir include
 	fi
-	if [ -d "${repository}/include" ] && [ -f "${repository}/include/merlin_type_traits.hpp" ]; then
-		cp "${repository}/include/merlin_type_traits.hpp" ./include/
+	if [ -d "${repository}/include" ] && [ -f "${repository}/include/merlin_type_traits" ]; then
+		cp "${repository}/include/merlin_"*.hpp ./include/
+		cp "${repository}/include/merlin_type_traits" ./include/
 	else
 		echo "[Error] Sources not found - The installation script must be called from the repository (cd to Merlin-type-traits/)."
 	fi
