@@ -28,7 +28,8 @@ namespace merl
             {
                 return (std::is_same<Ts, Us>::value && ...);
             }
-            return false;
+            else
+                return false;
         }
     };
 }
