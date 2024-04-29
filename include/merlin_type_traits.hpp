@@ -17,6 +17,20 @@ namespace merl
                                                                                           long     , unsigned long,
                                                                                           long long, unsigned long long>
     {};
+
+    template <typename ... Ts>
+    struct variadic
+    {
+        template <typename ... Us>
+        static constexpr bool is_same()
+        {
+            if constexpr ((sizeof...(Ts) == sizeof...(Us)))
+            {
+                return (std::is_same<Ts, Us>::value && ...);
+            }
+            return false;
+        }
+    };
 }
 
 #endif
